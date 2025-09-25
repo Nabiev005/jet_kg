@@ -1,0 +1,103 @@
+/* Header.module.css */
+
+/* Глобал түстөр (эгер :root ичинде index.css’те жок болсо, кошуп кой) */
+/*
+:root {
+  --color-primary: #e63946;
+  --color-dark: #1a1a1a;
+  --color-light: #ffffff;
+}
+*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  position: relative;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--color-light);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: var(--color-primary);
+}
+
+/* Burger icon */
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.burger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin: 5px 0;
+  background: var(--color-light);
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* Burger open animation */
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* 📱 Адаптив: 768pxден кичине болсо */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--color-dark);
+    padding: 1rem;
+    width: 220px;
+    border-radius: 0 0 0 12px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    gap: 0.75rem;
+  }
+
+  .nav.open {
+    max-height: 400px;
+    opacity: 1;
+  }
+
+  .burger {
+    display: block;
+  }
+}

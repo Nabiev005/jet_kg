@@ -1,0 +1,63 @@
+/* Footer.module.css */
+
+/* Негизги футер стили */
+.footer {
+  background: var(--color-dark); /* #1a1a1a */
+  color: var(--color-light);     /* #fff */
+  padding: 1.5rem 1rem 0.5rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.info h3 {
+  margin-bottom: 0.5rem;
+  color: var(--color-primary); /* бренд түстө чыксын */
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.socials a {
+  color: #ccc;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.socials a:hover {
+  color: var(--color-primary); /* hover кызыл чыгат */
+}
+
+.copy {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  border-top: 1px solid #444;
+  padding-top: 0.5rem;
+  color: #bbb;
+}
+
+/* 📱 Адаптив */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .socials {
+    flex-direction: row;
+    justify-content: center;
+  }
+}

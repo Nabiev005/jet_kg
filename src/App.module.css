@@ -1,0 +1,10 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* экрандын толук бийиктиги */
+}
+
+.main {
+  flex: 1; /* негизги контент толуп, footerды ылдый түртөт */
+  padding: 1rem;
+}

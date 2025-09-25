@@ -1,0 +1,15 @@
+/* App.css же глобалдык стилдер */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* толук экран бийиктиги */
+}
+
+main {
+  flex: 1; /* контент жетиштүү орун алып, футерди ылдый итерет */
+}
