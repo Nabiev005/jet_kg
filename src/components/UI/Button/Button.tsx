@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from "react";  // 👈 кошуу керек
+import { type ButtonHTMLAttributes } from "react";  // 👈 кошуу керек
 import styles from "./Button.module.css";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
