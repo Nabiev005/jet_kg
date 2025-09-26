@@ -1,29 +1,28 @@
-/* Footer.module.css */
-
 /* Негизги футер стили */
 .footer {
   background: var(--color-dark); /* #1a1a1a */
   color: var(--color-light);     /* #fff */
-  padding: 1.5rem 1rem 0.5rem;
+  padding: 1rem 0.5rem; /* азайттык */
 }
 
 .container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center; /* жогору эмес, ортого */
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem; /* gap кичирээк */
 }
 
 .info h3 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem; /* кичирейтилди */
   color: var(--color-primary); /* бренд түстө чыксын */
+  font-size: 1.1rem; /* чоң эмес */
 }
 
 .socials {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.3rem;
 }
 
 .socials a {
@@ -31,7 +30,8 @@
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.3rem;
+  font-size: 0.95rem; /* кичине */
   transition: color 0.2s ease;
 }
 
@@ -41,11 +41,11 @@
 
 .copy {
   text-align: center;
-  font-size: 0.9rem;
-  margin-top: 1rem;
-  border-top: 1px solid #444;
-  padding-top: 0.5rem;
-  color: #bbb;
+  font-size: 0.8rem; /* кичирээк */
+  margin-top: 0.5rem; /* аз */
+  border-top: 1px solid #333;
+  padding-top: 0.3rem;
+  color: #aaa;
 }
 
 /* 📱 Адаптив */
@@ -54,10 +54,12 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
+    gap: 0.5rem; /* мобилде андан да аз */
   }
 
   .socials {
     flex-direction: row;
     justify-content: center;
+    gap: 0.5rem;
   }
 }
