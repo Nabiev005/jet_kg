@@ -2,22 +2,52 @@
   padding: 2rem;
 }
 
+/* Hero секция */
 .hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin-bottom: 3rem;
+  padding: 2rem;
+
+  /* задний фон */
+  background: url("../../assets/bac.jpg") center/cover no-repeat;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero h1,
+.hero p,
+.hero button {
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: #fff;
 }
 
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
+  max-width: 600px;
 }
 
+/* About секция */
 .about {
   max-width: 800px;
   margin: 0 auto 3rem;
@@ -27,12 +57,28 @@
 .about h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #222;
 }
 
+.about p {
+  font-size: 1.1rem;
+  color: white;
+  line-height: 1.5;
+}
+
+/* Features grid */
 .features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  color: black;
+}
+
+/* Карточка responsiveness */
+@media (max-width: 1024px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -42,5 +88,9 @@
 
   .hero h1 {
     font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
   }
 }

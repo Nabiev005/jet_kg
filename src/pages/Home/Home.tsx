@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Card from "../../components/UI/Card";
 import Button from "../../components/UI/Button";
 import styles from "./Home.module.css";
+import Testimonials from "./Testimonials";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -39,6 +40,7 @@ const Home = () => {
       </motion.div>
 
       {/* Features секция */}
+      
       <div className={styles.features}>
         {[
           { title: "📦 Бишкек ичинде", text: "150 сомдон баштап жеткирүү." },
@@ -59,6 +61,7 @@ const Home = () => {
           </motion.div>
         ))}
       </div>
+      <Testimonials />
     </section>
   );
 };

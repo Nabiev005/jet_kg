@@ -22,21 +22,23 @@ const Contact = () => {
     setLoading(true);
     setStatus("");
 
-    const BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
-    const CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
-    const text = `📩 Жаңы заказ:\n\n👤 Аты: ${formData.name}\n📱 Телефон: ${formData.phone}\n📧 Email: ${formData.email}\n💬 Билдирүү: ${formData.message}`;
-
     try {
-      await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      // 🚀 Backend'ке заказ жиберебиз
+      const res = await fetch("http://localhost:5000/order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chat_id: CHAT_ID, text }),
+        body: JSON.stringify(formData),
       });
 
-      setStatus("✅ Заказ ийгиликтүү жөнөтүлдү!");
-      setFormData({ name: "", phone: "", email: "", message: "" });
-    } catch {
-      setStatus("❌ Ката чыкты. Кийин кайра аракет кылыңыз.");
+      if (res.ok) {
+        setStatus("✅ Заказ ийгиликтүү жөнөтүлдү! Биз сиз менен байланышабыз.");
+        setFormData({ name: "", phone: "", email: "", message: "" });
+      } else {
+        setStatus("❌ Серверден ката чыкты. Кийин кайра аракет кылыңыз.");
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("❌ Байланышта ката чыкты.");
     } finally {
       setLoading(false);
     }
